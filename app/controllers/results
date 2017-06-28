@@ -1,0 +1,23 @@
+class ResultsController < ApplicationController
+
+	def index
+    if params[:query].present?
+      @hows = How.search(params[:query], show: params[:show])
+      @urban_terms = UrbanTerm.search(params[:query])
+
+    else
+      @hows = How.all
+      @urban_terms = UrbanTerm.all
+    
+    end
+  end
+
+
+
+  def show
+      @hows = How.all
+      @urban_terms = UrbanTerm.all
+
+    end
+
+end

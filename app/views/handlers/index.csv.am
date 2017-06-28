@@ -1,0 +1,8 @@
+csv << ['Title', 'urban_term']
+
+@urban_terms.each do |urban_term|
+  csv << [
+    urban_term.title,
+    urban_term.description
+  ]
+end

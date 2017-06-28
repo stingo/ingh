@@ -1,0 +1,28 @@
+<% if !profile_signed_in? %>
+  <%= render '/layouts/nav_guest' %>
+<% else %>
+  <%= render '/layouts/nav_user' %>
+<% end %>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @urban_terms.each do |urban_term| %>
+      <tr>
+        <td><%= urban_term.title %></td>
+        
+        <td><%= link_to 'Show', urban_term %></td>
+        <td><%= link_to 'Edit', edit_urban_term_path(urban_term) %></td>
+        <td><%= link_to 'Destroy', urban_term, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

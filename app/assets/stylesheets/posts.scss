@@ -1,0 +1,167 @@
+// Place all the styles related to the Post controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+/**body {
+    background-color: rgba(0, 0, 0, 0) linear-gradient(40deg, #d1edf0 10%, #ecc8c6 100%) !important; 
+}
+
+
+.box-hover:hover {
+    color:white;
+    opacity:0.5;    
+    
+
+}
+
+
+.sdw {
+    cursor: pointer;
+    margin-top: 0px !important;
+    margin-right: 10px;
+    box-shadow: 0 8px 17px rgba(22, 24, 27, 0.2);
+    margin: 60px auto 5px;
+    padding: 2px;
+    position: relative;
+    width: 640px;
+
+}
+
+.page-urban_terms {
+  .posts-search {
+    text-align: center;
+    max-width: 35em;
+    margin: 2em auto;
+    padding: 2em;
+
+    input {
+      width: 100%;
+      font-size: 1em;
+      padding: .5em 1.3em;
+      background: transparent;
+      border: 1px solid #ddd;
+      border-radius: 2em;
+
+      &:focus {
+        border-color: #A5CEF5;
+      }
+    }
+
+   
+
+    .results {
+      text-align: left;
+
+      .ui-widget-content {
+        background: #fff;
+        font-size: .9em;
+        padding: .5em 0;
+        border-color: #ddd;
+        box-shadow: 0 .1em .2em rgba(187, 187, 187, 0.64);
+        line-height: 1.2;
+        max-height: 40em;
+        overflow: hidden;
+        overflow-y: auto;
+        z-index: 10;
+        margin-top: 50px;
+      }
+
+      .ui-menu-item {
+        font-family: 'Helvetica Neue', Helvetica, sans-serif;
+        padding: .4em .6em .4em 6.2em;
+        position: relative;
+        border: 0;
+        border-left: 5px solid transparent;
+        position: relative;
+        height: 6.5em;
+
+        .img {
+          position: absolute;
+          width: 5em;
+          height: 6em;
+          top: .4em;
+          left: .6em;
+          overflow: hidden;
+
+          img {
+            max-width: 100%;
+          }
+        }
+
+        .title {
+          display: block;
+          color: #555;
+        }
+
+        .description {
+          display: block;
+          font-size: .8em;
+          text-transform: uppercase;
+          color: #aaa;
+          margin-top: .6em;
+          letter-spacing: 1px;
+        }
+
+        .price {
+          display: block;
+          font-size: .8em;
+          color: #aaa;
+          margin-top: .5em;
+        }
+      }
+
+      .ui-state-focus {
+        background: #fff;
+        border-left-color: #08c;
+        font-weight: 300;
+
+        .title {
+          color: #08c;
+        }
+
+        .price,
+        .description {
+          color: #08c;
+        }
+      }
+    }
+  }
+
+  .urban_terms-list {
+    .post {
+      padding-left: 12em;
+      height: 13em;
+      position: relative;
+      line-height: 1.2;
+    }
+
+    .img {
+      position: absolute;
+      left: 0;
+      width: 10em;
+
+      img {
+        max-width: 100%;
+      }
+    }
+
+    .title {
+      font-size: 1.3em;
+    }
+
+    .description {
+      color: #888;
+      margin-bottom: .4em;
+    }
+
+    .details {
+      color: #aaa;
+      font-size: .9em;
+
+      span {
+        display: inline-block;
+        margin-right: 1em;
+      }
+    }
+  }
+}
+**/

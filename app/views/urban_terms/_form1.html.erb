@@ -1,0 +1,42 @@
+<%= form_for(urban_term) do |f| %>
+  <% if urban_term.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(urban_term.errors.count, "error") %> prohibited this urban_term from being saved:</h2>
+
+      <ul>
+      <% urban_term.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :inaction %>
+    <%= f.text_area :inaction %>
+  </div>
+
+<div class="field">
+    <label><h5 class="m0 text-primary">Add image action</h5>optional</label>
+    <%= f.file_field :urbantermcover %>
+    <% if f.object.urbantermcover? %>
+      <%= image_tag f.object.urbantermcover.small.url %>
+      <%# f.label :remove_image, :class => "lead"  %>
+      <%# f.check_box :remove_authurpic %> 
+    <% end %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

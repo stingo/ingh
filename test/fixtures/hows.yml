@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  body: MyText
+  howcover: MyString
+  video: MyString
+  profile: one
+  —skip-stylesheets: MyString
+
+two:
+  title: MyString
+  body: MyText
+  howcover: MyString
+  video: MyString
+  profile: two
+  —skip-stylesheets: MyString

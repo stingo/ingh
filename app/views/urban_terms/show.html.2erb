@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @urban_term.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @urban_term.description %>
+</p>
+
+<p>
+  <strong>Inaction:</strong>
+  <%= @urban_term.inaction %>
+</p>
+
+<p>
+  <strong>Postcover:</strong>
+  <%= @urban_term.postcover %>
+</p>
+
+
+                <div class="text-center">
+
+                      <%= image_tag @urban_term.urbantermcover.url(:large), :class => "box-hover text-center img-responsive" if @urban_term.urbantermcover? %>
+
+                      </div>
+
+<strong><%= @urban_term.impressionist_count(:filter=>:session_hash) %></strong>
+
+<%= link_to 'Edit', edit_urban_term_path(@urban_term) %> |
+<%= link_to 'Back', urban_terms_path %>

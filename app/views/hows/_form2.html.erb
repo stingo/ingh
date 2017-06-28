@@ -1,0 +1,41 @@
+<%= form_for(how) do |f| %>
+  <% if how.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(how.errors.count, "error") %> prohibited this how from being saved:</h2>
+
+      <ul>
+      <% how.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </div>
+
+  <div class="field">
+    <%= f.label :howcover %>
+    <%= f.text_field :howcover %>
+  </div>
+
+  <div class="field">
+    <%= f.label :video %>
+    <%= f.text_field :video %>
+  </div>
+
+
+
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

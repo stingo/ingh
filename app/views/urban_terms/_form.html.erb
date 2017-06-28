@@ -1,0 +1,236 @@
+<!-- Main section-->
+      <main class="">
+        <!-- Page content-->
+
+
+
+
+
+
+          <div class="container container-sm">
+            <div class="card">
+
+
+
+              <div class="card-body reader-block">
+
+
+
+
+
+
+
+
+
+              <%= form_for(urban_term) do |f| %>
+  <% if urban_term.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(urban_term.errors.count, "error") %> prohibited this urban_term from being saved:</h2>
+
+      <ul>
+      <% urban_term.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+
+
+
+     <div class="mda-form-group float-label mb">
+                    <div class="mda-form-control">
+                     <%= f.text_field :title, :class => "form-control" %>
+                      <div class="mda-form-control-line"></div>
+                       <label><h5 class="m0 text-primary">Title ...</h5></label>
+                    </div><span class="mda-form-msg">Title can be a word or a phrase e.g Aben Wo Ha</span>
+                  </div>
+
+
+
+                  <div class="field card">
+
+
+                  <br>
+
+
+<%= f.label :tag_list, 'Tags (separated with comas)' %>
+<%# f.text_field :tag_list, class: 'form-control' %>
+
+<%# f.select :tag_ids, Tag.all.pluck(:name, :id), {}, {multiple: true, class: "selectize"} %>
+
+<%= f.collection_select :tag_ids, Tag.order(:name), :id, :name, {}, {multiple: true, class: "selectize"} %>
+
+
+<%# f.select :tag_ids,
+  Tag.all.map { |u| [u.name, u.id] },
+               { include_blank: true },
+          
+               { multiple: true, class: 'chosen-select' }
+
+               %>
+
+<br>
+                    
+
+
+
+                  </div>
+
+
+    <div class="field card">
+    <label><h5 class="m0 text-primary">Meaning</h5>What is the meaning of the word or pharse you are adding</label>
+   <br>
+  
+    <%= f.trix_editor :description %>
+  
+  </div>
+
+
+
+<div class="actions">
+    <%= f.submit %>
+  </div>
+
+
+
+
+
+
+
+
+
+
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                 
+
+              </div>
+            </div>
+
+
+
+
+
+<div class="modal fade tag-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title" id="mySmallModalLabel">Add Tag</h4>
+      </div>
+      <div class="modal-body">
+
+
+
+      <%= form_for Tag.new do |f| %>
+          <div class='form-group'>
+    <%= f.label :name, "Name" %>
+    <%= f.text_field :name, autofocus: true, class: 'form-control' %>
+  </div>
+          <div class="form-group">
+            <%= f.submit class: "btn btn-primary" %>
+          </div>
+<% end %>
+
+
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+            <!--div class="card">
+              <div class="card-body reader-block">
+                
+
+                <span class="text-center"><strong>BREAKING IT DOWN</strong></span>
+              <br>
+               
+
+              <span><%# @how.inaction %></span>
+
+
+
+
+
+                <div class="text-center">
+
+                      post  image
+
+                      </div>
+
+
+
+
+
+
+
+              </div>
+            </div-->
+
+
+
+            <!--breaking it down ends-->
+
+            <!--images starts -->
+
+
+
+
+            <!--Video ends -->
+
+<!-- comments card-->
+
+
+              
+
+
+
+
+          </div>
+
+
+
+     
+
+        
+       
+                  
+
+              
+
+             
+               
+                    
+                     
+                
+
+                
+       
+    
+        <!-- Page footer-->
+        <footer><span>2017 - Centric app.</span></footer>
+      </main>
+
+

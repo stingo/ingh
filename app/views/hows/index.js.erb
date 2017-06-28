@@ -1,0 +1,2 @@
+$('#hows').append('<%= escape_javascript render(@hows) %>');
+$('.pagination').replaceWith('<%= escape_javascript will_paginate(@hows) %>');
