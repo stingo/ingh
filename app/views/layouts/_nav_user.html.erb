@@ -344,9 +344,13 @@
 
        <% end %>
 
-              
 
-              <span class="hidden-xs"><%= current_profile.first_name.split(" ").map(&:capitalize).join(" ") + ' '+ current_profile.last_name.split(" ").map(&:capitalize).join(" ") if current_profile.first_name || current_profile.last_name %> <%= "(Admin)" if current_profile.admin? %></span> <b class="caret"></b>
+
+              <%# "(Admin)" if current_profile.admin? %>
+
+
+
+              <span class="hidden-xs"><%= current_profile.first_name.split(" ").map(&:capitalize).join(" ") + ' '+ current_profile.last_name.split(" ").map(&:capitalize).join(" ") if current_profile.first_name || current_profile.last_name %> <%= "(Admin)" if current_profile.admin? %> </span> <b class="caret"></b>
             </a>
             <ul class="dropdown-menu animated fadeInLeft">
               <li class="arrow"></li>
