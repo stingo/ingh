@@ -62,6 +62,7 @@ gem 'acts_as_commentable_with_threading', '~> 2.0', '>= 2.0.1'
 gem 'best_in_place', github: 'bernat/best_in_place'
 gem 'will_paginate', '~> 3.1.0'
 gem 'pg'
+ruby "2.4.1"
 
 
 
