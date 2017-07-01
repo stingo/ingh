@@ -139,7 +139,6 @@ GEM
     mini_portile2 (2.2.0)
     minitest (5.10.2)
     multi_json (1.12.1)
-    mysql2 (0.4.6)
     nio4r (2.1.0)
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
@@ -265,7 +264,6 @@ DEPENDENCIES
   jquery-ui-rails
   listen (~> 3.0.5)
   mini_magick
-  mysql2 (>= 0.3.18, < 0.5)
   pg
   puma (~> 3.0)
   rails (~> 5.1.1)

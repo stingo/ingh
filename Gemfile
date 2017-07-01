@@ -61,6 +61,8 @@ gem 'acts_as_votable', '~> 0.10.0'
 gem 'acts_as_commentable_with_threading', '~> 2.0', '>= 2.0.1'
 gem 'best_in_place', github: 'bernat/best_in_place'
 gem 'will_paginate', '~> 3.1.0'
+gem 'pg'
+
 
 
 
@@ -71,8 +73,9 @@ group :development, :test do
 end
 
 group :development do
+
   # Use mysql as the database for Active Record
-  gem 'mysql2', '>= 0.3.18', '< 0.5'
+  #gem 'mysql2', '>= 0.3.18', '< 0.5'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'
@@ -83,7 +86,7 @@ end
 
 group :production do
 
-gem 'pg'
+
 
 gem 'rails_12factor'
 
