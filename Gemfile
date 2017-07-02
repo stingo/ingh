@@ -61,7 +61,9 @@ gem 'acts_as_votable', '~> 0.10.0'
 gem 'acts_as_commentable_with_threading', '~> 2.0', '>= 2.0.1'
 gem 'best_in_place', github: 'bernat/best_in_place'
 gem 'will_paginate', '~> 3.1.0'
+gem 'nodejs-rails', '~> 0.0.1'
 gem 'pg'
+gem 'therubyracer', '~> 0.12.3'
 ruby "2.4.1"
 
 
