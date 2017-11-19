@@ -215,7 +215,7 @@
 
 <p class="location"><%= timeago_tag Time.zone.now, :nojs => true, :limit => 10.days.ago %>, 
 
-<%= "Tagged:" if how.tag_ids.present? %> <span class="tags text-center"><%= raw how.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></span>
+<%# "Tagged:" if how.tag_ids.present? %> <span class="tags text-center"><%# raw how.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></span>
 
 </p>
                                     

@@ -33,6 +33,11 @@ class ProfilesController < ApplicationController
 
   end
 
+
+
+
+  
+
   # POST /profiles
   # POST /profiles.json
   #def create

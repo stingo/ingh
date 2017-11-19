@@ -215,7 +215,7 @@
 
 <p class="location"><%= timeago_tag Time.zone.now, :nojs => true, :limit => 10.days.ago %>, 
 
-<%= "Tagged:" if urban_term.tag_ids.present? %> <span class="tags text-center"><%= raw urban_term.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></span>
+<%# "Tagged:" if urban_term.tag_ids.present? %> <span class="tags text-center"><%# raw urban_term.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></span>
 
 </p>
 
@@ -242,7 +242,11 @@
 
       <% else %>
 
-      <% end %>                             
+      <% end %> 
+
+      <br>
+
+      <%= urban_term.followers_count %>                            
 
 
                                     

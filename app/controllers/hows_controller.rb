@@ -85,12 +85,12 @@ end
   # GET /hows/new
   def new
     @how = How.new
-    @tag = Tag.new
+    #@tag = Tag.new
   end
 
   # GET /hows/1/edit
   def edit
-    @tag = Tag.new
+    #@tag = Tag.new
   end
 
   # POST /hows

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170702160734) do
+ActiveRecord::Schema.define(version: 20171118212850) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,8 +27,23 @@ ActiveRecord::Schema.define(version: 20170702160734) do
     t.integer "rgt"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "rating"
+    t.integer "how_id"
     t.index ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type"
+    t.index ["how_id"], name: "index_comments_on_how_id"
     t.index ["profile_id"], name: "index_comments_on_profile_id"
+  end
+
+  create_table "follows", id: :serial, force: :cascade do |t|
+    t.string "followable_type", null: false
+    t.integer "followable_id", null: false
+    t.string "follower_type", null: false
+    t.integer "follower_id", null: false
+    t.boolean "blocked", default: false, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["followable_id", "followable_type"], name: "fk_followables"
+    t.index ["follower_id", "follower_type"], name: "fk_follows"
   end
 
   create_table "hows", id: :serial, force: :cascade do |t|
@@ -53,6 +68,7 @@ ActiveRecord::Schema.define(version: 20170702160734) do
     t.integer "minutes"
     t.text "recipetips"
     t.string "slug"
+    t.integer "rating"
     t.index ["profile_id"], name: "index_hows_on_profile_id"
     t.index ["slug"], name: "index_hows_on_slug", unique: true
   end
@@ -203,31 +219,6 @@ ActiveRecord::Schema.define(version: 20170702160734) do
     t.index ["reset_password_token"], name: "index_profiles_on_reset_password_token", unique: true
     t.index ["slug"], name: "index_profiles_on_slug", unique: true
     t.index ["typ_position_id"], name: "index_profiles_on_typ_position_id"
-  end
-
-  create_table "taggings", id: :serial, force: :cascade do |t|
-    t.integer "tag_id"
-    t.string "taggable_type"
-    t.integer "taggable_id"
-    t.string "tagger_type"
-    t.integer "tagger_id"
-    t.string "context", limit: 128
-    t.datetime "created_at"
-    t.index ["context"], name: "index_taggings_on_context"
-    t.index ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
-    t.index ["taggable_id", "taggable_type", "tagger_id", "context"], name: "taggings_idy"
-    t.index ["taggable_id"], name: "index_taggings_on_taggable_id"
-    t.index ["taggable_type", "taggable_id"], name: "index_taggings_on_taggable_type_and_taggable_id"
-    t.index ["taggable_type"], name: "index_taggings_on_taggable_type"
-    t.index ["tagger_id", "tagger_type"], name: "index_taggings_on_tagger_id_and_tagger_type"
-    t.index ["tagger_id"], name: "index_taggings_on_tagger_id"
-    t.index ["tagger_type", "tagger_id"], name: "index_taggings_on_tagger_type_and_tagger_id"
-  end
-
-  create_table "tags", id: :serial, force: :cascade do |t|
-    t.string "name"
-    t.integer "taggings_count", default: 0
-    t.index ["name"], name: "index_tags_on_name", unique: true
   end
 
   create_table "typ_countries", id: :serial, force: :cascade do |t|

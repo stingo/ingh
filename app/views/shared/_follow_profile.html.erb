@@ -1,0 +1,11 @@
+
+
+<%# link_to "", profile_follow_path(@profile), method: :post, remote: true,  :class=>"fa fa-heart-o rediconcolor" %>
+
+<% unless profile == current_profile %>
+  <% if current_profile.following?(profile) %>
+    <%= button_to("Un-Follow #{profile.first_name}", profile_follow_path(profile.to_param, current_profile.get_follow(profile).id), :method => :delete, :remote => true) %>
+  <% else %>
+    <%= button_to("Follow #{profile.first_name}", profile_follows_path(profile.to_param), :remote => true) %>
+  <% end %>
+<% end %>

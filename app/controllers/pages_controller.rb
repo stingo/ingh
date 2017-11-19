@@ -61,6 +61,20 @@ class PagesController < ApplicationController
     end
   end
 
+def follow
+  @current_profile.follow(@profile)
+  @follow = Follow.find_by(follower: @current_profile, followable: @profile)
+  respond_to :js
+end
+
+def unfollow
+  @current_profile.stop_following(@profile)
+  respond_to :js
+end
+
+
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_page

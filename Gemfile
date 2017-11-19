@@ -36,7 +36,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-
+gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'devise'
 gem 'font-awesome-rails' # Font-awesome icon
@@ -55,7 +55,7 @@ gem 'ckeditor', '~> 4.1', '>= 4.1.2'
 gem 'trix', '~> 0.9.0'
 gem 'friendly_id', '~> 5.1.0'
 #gem 'acts-as-taggable-on', '~> 4.0'
-gem 'acts-as-taggable-on', github: 'mbleigh/acts-as-taggable-on'
+gem 'acts-as-taggable-on', '~> 4.0'
 gem 'selectize-rails', '~> 0.12.4'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'acts_as_commentable_with_threading', '~> 2.0', '>= 2.0.1'

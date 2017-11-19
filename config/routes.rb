@@ -52,6 +52,15 @@ Rails.application.routes.draw do
 
 
 
+  resources :profiles, :only => [:index, :show] do
+    resources :follows, :only => [:create, :destroy]
+end
+
+
+
+
+
+
 #root 'urban_terms#index'
 root to: "main#index"
 

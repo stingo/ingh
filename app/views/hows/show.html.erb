@@ -143,7 +143,7 @@
 
                  
 
-                 <%= "Tagged:" if @how.tag_ids.present? %> <span class="tags text-center wht"><%= raw @how.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></span>
+                 <%# "Tagged:" if @how.tag_ids.present? %> <span class="tags text-center wht"><%# raw @how.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></span>
 
         
 
@@ -542,7 +542,7 @@ likes
 
                 <br>
 
-                <%= "Tagged:" if @how.tag_ids.present? %> <span class="tags text-center "><%= raw @how.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></span>
+                <%# "Tagged:" if @how.tag_ids.present? %> <span class="tags text-center "><%# raw @how.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></span>
               
 
               </div>

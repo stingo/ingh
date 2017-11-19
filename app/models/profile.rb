@@ -1,6 +1,9 @@
 class Profile < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+   acts_as_follower
+   acts_as_followable
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
     has_many :urban_terms, dependent: :destroy # remove a profile's urban_terms if his account is deleted.

@@ -28,6 +28,17 @@ class CommentsController < ApplicationController
     end
   end
 
+  def show
+
+
+    if @comments.blank?
+      @avg_comment = 0
+    else
+      @avg_comment = @comments.average(:rating).round(2)
+end
+    
+  end
+
 
 
 
@@ -44,7 +55,7 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:body, :commentable_id, :commentable_type, :comment_id)
+    params.require(:comment).permit(:body, :commentable_id, :commentable_type, :comment_id, :rating, :how_id )
   end
 
   def commentable_type
@@ -66,6 +77,7 @@ class CommentsController < ApplicationController
   def body
     comment_params[:body]
   end
+
 
   def make_child_comment
     return "" if comment_id.blank?

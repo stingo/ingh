@@ -8,6 +8,8 @@ class UrbanTerm < ApplicationRecord
 
   acts_as_votable
 
+  acts_as_followable
+
   
 
 	#searchkick text_start: [:title], suggest: [:title]

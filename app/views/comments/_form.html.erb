@@ -33,6 +33,16 @@
 										<%= form_for @new_comment do |f| %>  
   <%= f.hidden_field :commentable_id, value: @new_comment.commentable_id %>
   <%= f.hidden_field :commentable_type, value: @new_comment.commentable_type %>
+
+  <div class="field form-group">
+    <%= f.select :rating, options_for_select(1..5), { prompt: "Rate This" }  %>
+  </div>
+
+
+  <br>
+  <%= f.collection_select :how_id, How.all, :id, :rating, {prompt: "Select a company type" }, input_html: { class: "dropdown-toggle form-control input-sm bg-red" } %>
+
+</div>
   
 
   <div class="field form-group">
@@ -90,3 +100,11 @@
 <% else %>
 
 <% end %>
+
+
+<script>
+  $('#star-rating').raty({
+    path: '/assets/',
+    scoreName: 'review[rating]'
+  });
+</script>

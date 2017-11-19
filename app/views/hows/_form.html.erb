@@ -64,7 +64,7 @@
 
 <%# f.select :tag_ids, Tag.all.pluck(:name, :id), {}, {multiple: true, class: "selectize"} %>
 
-<%= f.collection_select :tag_ids, Tag.order(:name), :id, :name, {}, {multiple: true, class: "selectize"} %>
+<%# f.collection_select :tag_ids, Tag.order(:name), :id, :name, {}, {multiple: true, class: "selectize"} %>
 
 
 <%# f.select :tag_ids,
@@ -247,15 +247,15 @@ Text Content
 
 
 
-      <%= form_for Tag.new do |f| %>
+      <%# form_for Tag.new do |f| %>
           <div class='form-group'>
-    <%= f.label :name, "Name" %>
-    <%= f.text_field :name, autofocus: true, class: 'form-control' %>
+    <%# f.label :name, "Name" %>
+    <%# f.text_field :name, autofocus: true, class: 'form-control' %>
   </div>
           <div class="form-group">
-            <%= f.submit class: "btn btn-primary" %>
+            <%# f.submit class: "btn btn-primary" %>
           </div>
-<% end %>
+<%# end %>
 
 
 

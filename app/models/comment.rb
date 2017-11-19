@@ -4,11 +4,14 @@ class Comment < ActiveRecord::Base
   validates :body, :presence => true
   validates :profile, :presence => true
 
+
   # NOTE: install the acts_as_votable plugin if you
   # want profile to vote on the quality of comments.
   #acts_as_votable
 
   belongs_to :commentable, :polymorphic => true
+
+   belongs_to :hows
 
   # NOTE: Comments belong to a profile
   belongs_to :profile

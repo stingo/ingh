@@ -17,13 +17,14 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require best_in_place
+//= require jquery.raty
 //= require jquery.purr
 //= require best_in_place.purr
 //= require selectize
 //= require turbolinks
 //= require rails-timeago-all
 //= require jquery.turbolinks
-// require app
+//= require app
 //= require search
 // require posts
 //= require comments
