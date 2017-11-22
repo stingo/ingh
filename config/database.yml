@@ -1,21 +1,12 @@
-
 default: &default
   adapter: postgresql
-  encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: localhost
+  username: postgres
+  password: root
+  pool: 5
+  timeout: 5000
+  port: 5432
 
 development:
   <<: *default
   database: ingh_development
-  username: pgingh
-  password: 
-
-test:
-  <<: *default
-  database: ingh_test
-
-production:
-  <<: *default
-  database: ingh_production
-  username: pgingh
-  password: <%= ENV['INGH_DATABASE_PASSWORD'] %>

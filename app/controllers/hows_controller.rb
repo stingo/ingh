@@ -146,16 +146,32 @@ end
 
 
   def upvote 
-  @link = How.friendly.find(params[:id])
-  @link.upvote_by current_profile
-  redirect_to request.referer || root_path
-end  
+    @link = How.friendly.find(params[:id])
 
-def downvote
-  @link = How.friendly.find(params[:id])
-  @link.downvote_by current_profile
-  redirect_to request.referer || root_path
-end
+    if current_profile.voted_up_on? @link
+      status = 0
+      render :json => {:message => "Already Liked",:state=>status}
+    else
+      @link.upvote_by current_profile
+      status = 1
+      render :json => {:message => "Liked",:state=>status,:like_count=>@link.get_upvotes.size,:dislike_count=>@link.get_downvotes.size}
+    end
+    
+  end  
+
+  def downvote
+    @link = How.friendly.find(params[:id])
+    
+    if current_profile.voted_down_on? @link
+      status = 0
+      render :json => {:message => "Already DisLiked",:state=>status}
+    else
+      @link.downvote_by current_profile
+      status = 1
+      render :json => {:message => "DisLiked",:state=>status,:like_count=>@link.get_upvotes.size,:dislike_count=>@link.get_downvotes.size}
+    end
+    
+  end
 
 
 

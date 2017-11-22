@@ -18,6 +18,7 @@
         <td><%= profile.last_name %></td>
         <td><%= link_to 'Show', profile %></td>
         <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
+        <td><button class="follow_btn" value="<%= profile.id %>">Follow</button></td>
         <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -27,3 +28,18 @@
 <br>
 
 <%= link_to 'New Profile', new_profile_path %>
+<script type="text/javascript">
+  $(document).on('click','.follow_btn',function(){
+    var val = $(this).val();
+    var current = $(this);
+    $.ajax({
+        url: '/profiles/'+ val + '/follows',
+        type: 'post',
+        success: function(data) {
+          if(data.state == 1){
+            $(current).html(data.message);
+          }
+        }
+    });
+  })
+</script>
