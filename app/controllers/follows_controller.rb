@@ -2,9 +2,16 @@ class FollowsController < ApplicationController
 
   def create
     @profile = Profile.find(params[:profile_id])
-    current_profile.follow(@profile)
+    message = nil
+    if current_profile.following?(@profile)
+    	current_profile.stop_following(@profile)
+    	message = "Follow"
+    else
+    	current_profile.follow(@profile)
+    	message = "UnFollow"
+    end
     status = 1
-    render :json => {:message => "UnFollow",:state=>status}
+    render :json => {:message => message,:state=>status}
   end
 
   def destroy

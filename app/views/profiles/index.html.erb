@@ -18,7 +18,8 @@
         <td><%= profile.last_name %></td>
         <td><%= link_to 'Show', profile %></td>
         <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
-        <td><button class="follow_btn" value="<%= profile.id %>">Follow</button></td>
+        <td><button class="follow_btn" value="<%= profile.id %>">
+          <%= current_profile.following?(profile) ? "UnFollow" : "Follow" %></button></td>
         <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
