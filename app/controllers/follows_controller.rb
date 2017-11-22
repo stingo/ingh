@@ -11,7 +11,9 @@ class FollowsController < ApplicationController
     	message = "UnFollow"
     end
     status = 1
-    render :json => {:message => message,:state=>status}
+    followers = @profile.followers_count
+    followings = current_profile.follow_count
+    render :json => {:message => message,:state=>status,:followers=>followers,:followings => followings}
   end
 
   def destroy
