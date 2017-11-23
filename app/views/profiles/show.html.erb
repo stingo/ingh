@@ -187,9 +187,8 @@
 <%# render 'following' %> <%# render 'followers' %>
 
 <% if profile_signed_in? %>
-  <div id="#follow_profile">
-    <%= render :partial => "shared/follow_profile", :locals => {:profile => @profile} %>
-  </div>
+ <button class="follow_btn" value="<%= @profile.id %>">
+          <%= current_profile.following?(@profile) ? "UnFollow" : "Follow" %></button>
 <% end %>
 
 
@@ -685,3 +684,19 @@
       </div>
 
 </html>
+
+<script type="text/javascript">
+  $(document).on('click','.follow_btn',function(){
+    var val = $(this).val();
+    var current = $(this);
+    $.ajax({
+        url: '/profiles/'+ val + '/follows',
+        type: 'post',
+        success: function(data) {
+          if(data.state == 1){
+            $(current).html(data.message);
+          }
+        }
+    });
+  })
+</script> 

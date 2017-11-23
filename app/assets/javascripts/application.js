@@ -21,7 +21,7 @@
 //= require jquery.purr
 //= require best_in_place.purr
 //= require selectize
-//= require turbolinks
+//= require jquery.turbolinks
 //= require rails-timeago-all
 //= require jquery.turbolinks
 //= require app
