@@ -4,15 +4,12 @@ class CommentsController < ApplicationController
 
   def create
     commentable = commentable_type.constantize.find(commentable_id)
-    @comment = Comment.build_from(commentable, current_profile.id, body)
+    @comment = Comment.build_from(commentable, current_profile.id, body,rating)
 
     respond_to do |format|
       if @comment.save
         make_child_comment
         format.html  { redirect_to request.referer || root_path, :notice => 'Comment was successfully added.'  }
-
-
-      
       else
         format.html  { render :action => "new" }
       end
@@ -76,6 +73,10 @@ end
 
   def body
     comment_params[:body]
+  end
+
+  def rating
+    comment_params[:rating]
   end
 
 

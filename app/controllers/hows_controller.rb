@@ -70,13 +70,11 @@ end
    
     #@new_comment = Comment.new
 
-if current_profile.present?
+    if current_profile.present?
+        @new_comment = Comment.build_from(@how, current_profile.id, "",nil)
+    else
 
-    @new_comment = Comment.build_from(@how, current_profile.id, "")
-
-else
-
-end
+    end
 
 
 

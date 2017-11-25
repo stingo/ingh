@@ -19,11 +19,12 @@ class Comment < ActiveRecord::Base
   # Helper class method that allows you to build a comment
   # by passing a commentable object, a profile_id, and comment text
   # example in readme
-  def self.build_from(obj, profile_id, comment)
+  def self.build_from(obj, profile_id, comment,rating)
     new \
       :commentable => obj,
       :body        => comment,
-      :profile_id     => profile_id
+      :profile_id     => profile_id,
+      :rating => rating
   end
 
   #helper method to check if a comment has children
