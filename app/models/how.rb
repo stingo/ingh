@@ -4,7 +4,7 @@ class How < ApplicationRecord
 
   mount_uploader :howcover, HowcoverUploader
 
-has_many :comments
+  has_many :comments
 
   acts_as_commentable
 
