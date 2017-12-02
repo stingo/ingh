@@ -5,10 +5,15 @@ class CommentsController < ApplicationController
   def create
     commentable = commentable_type.constantize.find(commentable_id)
     @comment = Comment.build_from(commentable, current_profile.id, body,rating)
+    if commentable_type == "How"
+      @how = commentable
+    end
+    @new_comment = Comment.build_from(commentable, current_profile.id, "",nil)
 
     respond_to do |format|
       if @comment.save
         make_child_comment
+        format.js
         format.html  { redirect_to request.referer || root_path, :notice => 'Comment was successfully added.'  }
       else
         format.html  { render :action => "new" }

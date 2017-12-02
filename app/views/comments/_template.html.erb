@@ -4,7 +4,9 @@
   </h4>
 </div>
 
-<%= render partial: "comments/form", locals: {new_comment: new_comment} %>
+<div id="comment_form">
+	<%= render partial: "comments/form", locals: {new_comment: new_comment} %>
+</div>
 
 <div class="comments-container">  
   <%= render partial: "comments/reply", locals: {comments: commentable.root_comments} %>
