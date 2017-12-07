@@ -23,12 +23,10 @@
 //= require selectize
 //= require jquery.turbolinks
 //= require rails-timeago-all
-//= require jquery.turbolinks
 //= require app
 //= require search
 // require posts
 //= require comments
-//= require turbolinks
 //= require ckeditor/init
 //= require chosen-jquery
 //= require trix
