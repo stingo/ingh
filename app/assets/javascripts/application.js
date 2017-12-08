@@ -22,12 +22,10 @@
 //= require best_in_place.purr
 //= require selectize
 //= require rails-timeago-all
-//= require jquery.turbolinks
 //= require app
 //= require search
 // require posts
 //= require comments
-//= require turbolinks
 //= require ckeditor/init
 //= require chosen-jquery
 //= require trix
