@@ -16,6 +16,8 @@
 //= require urban_terms
 //= require jquery_ujs
 //= require jquery-ui
+//= require turbolinks
+//= require jquery.turbolinks
 //= require best_in_place
 //= require jquery.raty
 //= require jquery.purr
